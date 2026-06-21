@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 30px;
+        }
+
+        /* ✅ FIXED: vertical layout */
+        #mainContainer {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .container {
+            width: 350px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #4a6cf7;
+            margin-bottom: 15px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #4a6cf7;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 6px;
+            background: #4a6cf7;
+            color: white;
+            cursor: pointer;
+            margin-right: 8px;
+        }
+
+        button:hover {
+            background: #3557d6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="mainContainer">
+
+        <!-- Contact Form -->
+        <div class="container">
+            <h2>Contact Us</h2>
+
+            <input type="text" id="name" placeholder="Enter Name">
+            <input type="email" id="email" placeholder="Enter Email">
+            <input type="tel" id="contact" placeholder="Enter Contact Number">
+            <input type="text" id="address" placeholder="Enter Address">
+
+            <textarea id="message" rows="4" placeholder="Enter Message"></textarea>
+
+            <button onclick="submitData()">Submit</button>
+            <button onclick="updateData()">Update</button>
+        </div>
+
+        <!-- Details Form -->
+        <div class="container">
+            <h2>Details</h2>
+
+            <input type="text" id="details-name" placeholder="Enter Name">
+            <input type="email" id="details-email" placeholder="Enter Email">
+            <input type="tel" id="details-contact" placeholder="Enter Contact Number">
+            <input type="text" id="details-address" placeholder="Enter Address">
+
+            <textarea id="details-message" rows="4" placeholder="Enter Message"></textarea>
+
+            <button onclick="editData()">Edit</button>
+        </div>
+
+    </div>
+
+    <script type="module" src="./main.js"></script>
+
+</body>
+
+</html>

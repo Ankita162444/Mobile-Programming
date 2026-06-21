@@ -1,0 +1,91 @@
+
+Profile · HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Profile — SmartWaste</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+ 
+<div class="phone-frame">
+  <div class="screen-content">
+    <h2 class="page-title standalone">My Profile</h2>
+ 
+    <div class="profile-card">
+      <div class="avatar">A</div>
+      <div class="profile-name">Ankita Gautam</div>
+      <div class="profile-email">ankita@gmail.com</div>
+    </div>
+ 
+    <div class="stat-row stat-row-3">
+      <div class="stat-card small">
+        <div class="stat-value">14 kg</div>
+        <div class="stat-label">Collected</div>
+      </div>
+      <div class="stat-card small">
+        <div class="stat-value">9</div>
+        <div class="stat-label">Pickups</div>
+      </div>
+      <div class="stat-card small">
+        <div class="stat-value">82%</div>
+        <div class="stat-label">Recycled</div>
+      </div>
+    </div>
+ 
+    <div class="eco-score-card">
+      <div class="eco-score-row">
+        <span>Eco Score Level 3</span>
+        <span>240 pts</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="eco-progress" style="width: 70%;"></div>
+      </div>
+      <div class="eco-score-sub">130 pts to reach Level 4</div>
+    </div>
+ 
+    <h3 class="section-heading">Account</h3>
+ 
+    <button class="action-row">
+      <span class="action-icon icon-green">👤</span>
+      <span class="action-label">Personal Details</span>
+      <span class="chev">›</span>
+    </button>
+ 
+    <button class="action-row">
+      <span class="action-icon icon-blue">🔔</span>
+      <span class="action-label">Notifications</span>
+      <span class="chev">›</span>
+    </button>
+ 
+    <a class="action-row" id="signout-btn" href="signin.html">
+      <span class="action-icon icon-red">⏻</span>
+      <span class="action-label signout-label">Sign out</span>
+    </a>
+  </div>
+ 
+  <nav class="bottom-nav">
+    <a class="nav-item" href="dashboard.html">
+      <span class="nav-icon">🏠</span><span>Home</span>
+    </a>
+    <a class="nav-item" href="pickup.html">
+      <span class="nav-icon">🚛</span><span>Pickup</span>
+    </a>
+    <a class="nav-item" href="report.html">
+      <span class="nav-icon">⚠</span><span>Report</span>
+    </a>
+    <a class="nav-item active" href="profile.html">
+      <span class="nav-icon">👤</span><span>Profile</span>
+    </a>
+  </nav>
+</div>
+ 
+<div class="toast" id="toast"></div>
+ 
+<script type="module" src="script.js"></script>
+</body>
+</html>

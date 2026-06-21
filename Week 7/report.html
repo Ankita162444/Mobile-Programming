@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Report Waste — SmartWaste</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="phone-frame">
+  <div class="screen-content">
+
+    <!-- HEADER -->
+    <div class="page-header">
+      <a class="back-btn" href="dashboard.html">←</a>
+      <h2 class="page-title">Report Waste</h2>
+    </div>
+
+    <!-- WASTE CATEGORY -->
+    <h3 class="section-heading">Waste Category</h3>
+
+    <div class="grid-2 waste-type-grid" id="report-waste-type">
+
+      <button class="type-card active" data-value="organic">
+        <span class="type-icon">🌿</span>
+        <span>Organic</span>
+      </button>
+
+      <button class="type-card" data-value="recyclable">
+        <span class="type-icon">♻</span>
+        <span>Recyclable</span>
+      </button>
+
+      <button class="type-card" data-value="general">
+        <span class="type-icon">🗑</span>
+        <span>General</span>
+      </button>
+
+      <button class="type-card" data-value="hazardous">
+        <span class="type-icon">⚠</span>
+        <span>Hazardous</span>
+      </button>
+
+    </div>
+
+    <!-- PHOTO -->
+    <h3 class="section-heading">Add a Photo</h3>
+
+    <label class="upload-box" for="photo-input">
+      <span class="upload-icon">📷</span>
+      <span>Tap to Upload Photo</span>
+      <input type="file" id="photo-input" accept="image/*" hidden>
+    </label>
+
+    <div id="photo-preview-wrap"></div>
+
+    <!-- LOCATION -->
+    <h3 class="section-heading">Location</h3>
+    <div class="map-box">
+      <span class="map-pin">📍</span>
+    </div>
+
+    <!-- URGENCY -->
+    <h3 class="section-heading">Urgency Level</h3>
+
+    <div class="grid-3" id="report-urgency">
+
+      <button class="urgency-card active" data-value="low">Low</button>
+      <button class="urgency-card" data-value="medium">Medium</button>
+      <button class="urgency-card" data-value="high">High</button>
+
+    </div>
+
+    <!-- SUBMIT -->
+    <button class="btn-primary" id="submit-report-btn">
+      ▷ Submit Report
+    </button>
+
+  </div>
+
+  <!-- BOTTOM NAV -->
+  <nav class="bottom-nav">
+    <a class="nav-item" href="dashboard.html">
+      <span>🏠</span><span>Home</span>
+    </a>
+
+    <a class="nav-item" href="pickup.html">
+      <span>🚛</span><span>Pickup</span>
+    </a>
+
+    <a class="nav-item active" href="report.html">
+      <span>⚠</span><span>Report</span>
+    </a>
+
+    <a class="nav-item" href="profile.html">
+      <span>👤</span><span>Profile</span>
+    </a>
+  </nav>
+
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- JS -->
+<script type="module" src="script.js"></script>
+
+</body>
+</html>

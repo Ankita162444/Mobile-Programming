@@ -1,0 +1,90 @@
+
+Dashboard · HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — SmartWaste</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+ 
+<div class="phone-frame">
+  <div class="screen-content">
+    <div class="top-bar">
+      <div class="brand-row small">
+        <span class="logo-icon">♻️</span>
+        <span class="brand-name">SmartWaste</span>
+      </div>
+      <button class="icon-btn" id="notif-btn">🔔</button>
+    </div>
+ 
+    <p class="greeting">Good morning 👋</p>
+    <h1 class="hello-name">Hello, Ankita</h1>
+ 
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-value">14 kg</div>
+        <div class="stat-label">Collected</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">82%</div>
+        <div class="stat-label">Recycled</div>
+      </div>
+    </div>
+ 
+    <div class="next-pickup-card">
+      <div class="pickup-icon">🚛</div>
+      <div class="pickup-info">
+        <div class="pickup-title">Next Pickup</div>
+        <div class="pickup-type">General Waste</div>
+        <div class="pickup-date">Wed, Jun 18, 8:00 AM</div>
+      </div>
+      <span class="chip chip-soon">Soon</span>
+    </div>
+ 
+    <h3 class="section-heading">Quick actions</h3>
+ 
+    <a class="action-row" href="pickup.html">
+      <span class="action-icon icon-blue">🚛</span>
+      <span class="action-label">Schedule Pickup</span>
+      <span class="chev">›</span>
+    </a>
+ 
+    <a class="action-row" href="report.html">
+      <span class="action-icon icon-yellow">⚠</span>
+      <span class="action-label">Report Waste</span>
+      <span class="chev">›</span>
+    </a>
+ 
+    <button class="action-row" id="find-bin-btn">
+      <span class="action-icon icon-pink">📍</span>
+      <span class="action-label">Find Nearest Bin</span>
+      <span class="chev">›</span>
+    </button>
+  </div>
+ 
+  <nav class="bottom-nav">
+    <a class="nav-item active" href="dashboard.html">
+      <span class="nav-icon">🏠</span><span>Home</span>
+    </a>
+    <a class="nav-item" href="pickup.html">
+      <span class="nav-icon">🚛</span><span>Pickup</span>
+    </a>
+    <a class="nav-item" href="report.html">
+      <span class="nav-icon">⚠</span><span>Report</span>
+    </a>
+    <a class="nav-item" href="profile.html">
+      <span class="nav-icon">👤</span><span>Profile</span>
+    </a>
+  </nav>
+</div>
+ 
+<div class="toast" id="toast"></div>
+ 
+<script type="module" src="script.js"></script>
+</body>
+</html>

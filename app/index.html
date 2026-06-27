@@ -1,0 +1,287 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartWaste</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+ 
+<div class="phone-frame">
+ 
+  <!-- ══ STATUS BAR ══ -->
+  <div class="status-bar">
+    <span class="status-time" id="status-time">9:41</span>
+    <div class="status-icons">
+      <span class="status-icon" title="Signal">
+        <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
+          <rect x="0"  y="8"  width="3" height="4" rx="0.8" fill="currentColor" opacity="0.35"/>
+          <rect x="4.5" y="5.5" width="3" height="6.5" rx="0.8" fill="currentColor" opacity="0.55"/>
+          <rect x="9"  y="3"  width="3" height="9" rx="0.8" fill="currentColor" opacity="0.75"/>
+          <rect x="13.5" y="0" width="2.5" height="12" rx="0.8" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="status-icon" title="WiFi">
+        <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
+          <path d="M8 9.5a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z" fill="currentColor"/>
+          <path d="M4.2 7.1a5.4 5.4 0 0 1 7.6 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none" opacity="0.7"/>
+          <path d="M1.5 4.4a9 9 0 0 1 13 0" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none" opacity="0.4"/>
+        </svg>
+      </span>
+      <span class="status-icon battery-icon" title="Battery">
+        <svg width="22" height="12" viewBox="0 0 22 12" fill="none">
+          <rect x="0.5" y="0.5" width="18" height="11" rx="2.5" stroke="currentColor" stroke-width="1"/>
+          <rect x="19.5" y="3.5" width="2" height="5" rx="1" fill="currentColor" opacity="0.5"/>
+          <rect x="2" y="2" width="13" height="8" rx="1.5" fill="currentColor" opacity="0.85"/>
+        </svg>
+      </span>
+    </div>
+  </div>
+ 
+  <!-- ══════════════════════════════════
+       SCREEN: DASHBOARD
+  ══════════════════════════════════ -->
+  <div id="screen-dashboard" class="screen active">
+    <div class="screen-content">
+      <div class="top-bar">
+        <div class="brand-row small">
+          <span class="logo-icon">♻️</span>
+          <span class="brand-name">SmartWaste</span>
+        </div>
+        <button class="icon-btn" id="notif-btn" aria-label="Notifications">🔔</button>
+      </div>
+ 
+      <p class="greeting">Good morning 👋</p>
+      <h1 class="hello-name">Hello, Ankita</h1>
+ 
+      <div class="stat-row">
+        <div class="stat-card">
+          <div class="stat-value">14 kg</div>
+          <div class="stat-label">Collected</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">82%</div>
+          <div class="stat-label">Recycled</div>
+        </div>
+      </div>
+ 
+      <div class="next-pickup-card">
+        <div class="pickup-icon">🚛</div>
+        <div class="pickup-info">
+          <div class="pickup-title">Next Pickup</div>
+          <div class="pickup-type">General Waste</div>
+          <div class="pickup-date">Wed, Jun 18, 8:00 AM</div>
+        </div>
+        <span class="chip chip-soon">Soon</span>
+      </div>
+ 
+      <h3 class="section-heading">Quick actions</h3>
+ 
+      <button class="action-row" data-nav="pickup">
+        <span class="action-icon icon-blue">🚛</span>
+        <span class="action-label">Schedule Pickup</span>
+        <span class="chev">›</span>
+      </button>
+ 
+      <button class="action-row" data-nav="report">
+        <span class="action-icon icon-yellow">⚠</span>
+        <span class="action-label">Report Waste</span>
+        <span class="chev">›</span>
+      </button>
+ 
+      <button class="action-row" id="find-bin-btn">
+        <span class="action-icon icon-pink">📍</span>
+        <span class="action-label">Find Nearest Bin</span>
+        <span class="chev">›</span>
+      </button>
+    </div>
+ 
+    <nav class="bottom-nav" data-screen="dashboard"></nav>
+  </div>
+ 
+  <!-- ══════════════════════════════════
+       SCREEN: SCHEDULE PICKUP
+  ══════════════════════════════════ -->
+  <div id="screen-pickup" class="screen">
+    <div class="screen-content">
+      <div class="page-header">
+        <button class="back-btn" data-nav="dashboard" aria-label="Back">←</button>
+        <h2 class="page-title">Schedule Pickup</h2>
+      </div>
+ 
+      <h3 class="section-heading">Select Waste Type</h3>
+      <div class="grid-2" id="pickup-waste-type">
+        <button class="type-card active" data-value="organic">
+          <span class="type-icon">🌿</span><span>Organic</span>
+        </button>
+        <button class="type-card" data-value="recyclable">
+          <span class="type-icon">♻</span><span>Recyclable</span>
+        </button>
+        <button class="type-card" data-value="general">
+          <span class="type-icon">🗑</span><span>General</span>
+        </button>
+        <button class="type-card" data-value="hazardous">
+          <span class="type-icon">⚠</span><span>Hazardous</span>
+        </button>
+      </div>
+ 
+      <h3 class="section-heading">Pickup Date</h3>
+      <div class="input-wrap select-wrap">
+        <span class="icon">📅</span>
+        <input type="date" id="pickup-date" value="2026-06-19" />
+      </div>
+ 
+      <h3 class="section-heading">Time Slot</h3>
+      <div class="grid-3" id="pickup-time-slot">
+        <button class="slot-card active" data-value="morning">
+          <div>8–10 AM</div><div class="slot-sub">Morning</div>
+        </button>
+        <button class="slot-card" data-value="midday">
+          <div>11–1 PM</div><div class="slot-sub">Midday</div>
+        </button>
+        <button class="slot-card" data-value="afternoon">
+          <div>2–4 PM</div><div class="slot-sub">Afternoon</div>
+        </button>
+      </div>
+ 
+      <h3 class="section-heading">Your Address</h3>
+      <div class="input-wrap select-wrap">
+        <span class="icon">📍</span>
+        <input type="text" id="pickup-address" value="Lubhoo, Lalitpur" />
+      </div>
+ 
+      <button class="btn-primary" id="confirm-pickup-btn">✓ Confirm Pickup</button>
+    </div>
+ 
+    <nav class="bottom-nav" data-screen="pickup"></nav>
+  </div>
+ 
+  <!-- ══════════════════════════════════
+       SCREEN: REPORT WASTE
+  ══════════════════════════════════ -->
+  <div id="screen-report" class="screen">
+    <div class="screen-content">
+      <div class="page-header">
+        <button class="back-btn" data-nav="dashboard" aria-label="Back">←</button>
+        <h2 class="page-title">Report Waste</h2>
+      </div>
+ 
+      <h3 class="section-heading">Waste Category</h3>
+      <div class="grid-2" id="report-waste-type">
+        <button class="type-card active" data-value="organic">
+          <span class="type-icon">🌿</span><span>Organic</span>
+        </button>
+        <button class="type-card" data-value="recyclable">
+          <span class="type-icon">♻</span><span>Recyclable</span>
+        </button>
+        <button class="type-card" data-value="general">
+          <span class="type-icon">🗑</span><span>General</span>
+        </button>
+        <button class="type-card" data-value="hazardous">
+          <span class="type-icon">⚠</span><span>Hazardous</span>
+        </button>
+      </div>
+ 
+      <h3 class="section-heading">Add a Photo</h3>
+      <label class="upload-box" for="photo-input">
+        <span class="upload-icon">📷</span>
+        <span>Tap to Upload Photo</span>
+        <input type="file" id="photo-input" accept="image/*" hidden />
+      </label>
+      <div id="photo-preview-wrap"></div>
+ 
+      <h3 class="section-heading">Location</h3>
+      <div class="map-box">
+        <span class="map-pin">📍</span>
+      </div>
+ 
+      <h3 class="section-heading">Urgency Level</h3>
+      <div class="grid-3" id="report-urgency">
+        <button class="urgency-card active" data-value="low">Low</button>
+        <button class="urgency-card" data-value="medium">Medium</button>
+        <button class="urgency-card" data-value="high">High</button>
+      </div>
+ 
+      <button class="btn-primary" id="submit-report-btn" style="margin-bottom: 8px;">
+        ▷ Submit Report
+      </button>
+    </div>
+ 
+    <nav class="bottom-nav" data-screen="report"></nav>
+  </div>
+ 
+  <!-- ══════════════════════════════════
+       SCREEN: PROFILE
+  ══════════════════════════════════ -->
+  <div id="screen-profile" class="screen">
+    <div class="screen-content">
+      <h2 class="page-title standalone">My Profile</h2>
+ 
+      <div class="profile-card">
+        <div class="avatar">A</div>
+        <div class="profile-name">Ankita Gautam</div>
+        <div class="profile-email">ankita@gmail.com</div>
+      </div>
+ 
+      <div class="stat-row stat-row-3">
+        <div class="stat-card small">
+          <div class="stat-value">14 kg</div>
+          <div class="stat-label">Collected</div>
+        </div>
+        <div class="stat-card small">
+          <div class="stat-value">9</div>
+          <div class="stat-label">Pickups</div>
+        </div>
+        <div class="stat-card small">
+          <div class="stat-value">82%</div>
+          <div class="stat-label">Recycled</div>
+        </div>
+      </div>
+ 
+      <div class="eco-score-card">
+        <div class="eco-score-row">
+          <span>Eco Score Level 3</span>
+          <span>240 pts</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" style="width: 70%;"></div>
+        </div>
+        <div class="eco-score-sub">130 pts to reach Level 4</div>
+      </div>
+ 
+      <h3 class="section-heading">Account</h3>
+ 
+      <button class="action-row" id="personal-details-btn">
+        <span class="action-icon icon-green">👤</span>
+        <span class="action-label">Personal Details</span>
+        <span class="chev">›</span>
+      </button>
+ 
+      <button class="action-row" id="notifications-btn">
+        <span class="action-icon icon-blue">🔔</span>
+        <span class="action-label">Notifications</span>
+        <span class="chev">›</span>
+      </button>
+ 
+      <button class="action-row" id="signout-btn">
+        <span class="action-icon icon-red">⏻</span>
+        <span class="action-label signout-label">Sign out</span>
+      </button>
+    </div>
+ 
+    <nav class="bottom-nav" data-screen="profile"></nav>
+  </div>
+ 
+  <!-- ══ TOAST ══ -->
+  <div class="toast" id="toast"></div>
+ 
+</div><!-- /.phone-frame -->
+ 
+<script type="module" src="script.js"></script>
+</body>
+</html>
